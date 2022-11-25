@@ -1,8 +1,8 @@
 // ==UserScript==
-// @name         华为内网CSDN免登录复制+可选择复制+净化剪切板
+// @name         华为内网CSDN免登录复制+可选择复制+净化剪切板+阅读全文
 // @namespace    http://tampermonkey.net/
-// @version      2.0.7
-// @description  华为内网CSDN免登录复制+可选择复制+净化剪切板，创作不易，打赏随意，支付宝13750421396。
+// @version      2.0.8
+// @description  华为内网CSDN免登录复制+可选择复制+净化剪切板+阅读全文，创作不易，打赏随意，支付宝13750421396。
 // @author       孙泽程
 // @require       https://code.jquery.com/jquery-3.1.1.min.js
 // @include      *://*.csdn.net/*
@@ -36,4 +36,8 @@
 
     // 去除剪贴板劫持
     csdn.copyright.init("", "", "");
+
+    //不用关注博主即可阅读全文
+    $("#article_content").removeAttr("style");
+    $(".hide-article-box").remove();
 })();
